@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+            color: blue;
+        }
+        textarea{
+            display: block;
+            width:80%;
+            height:80px;
+            margin:auto;
+        }
+
+        button{
+            display: block;
+            width:100px;
+            height:45px;
+            margin:auto;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>hola mundo</h2>
+    <h3>Ingresa un texto</h3>
+    <textarea id="cadena"></textarea>
+
+    <button id="btn">Leer texto</button>
+
+    <script>
+        let cadena = "Hola me llamo Leonel Márquez y soy programador fullstack";
+        // window.speechSynthesis.speak(new SpeechSynthesisUtterance("hola"));
+        function hablar (cadena) {
+           window.speechSynthesis.speak(new SpeechSynthesisUtterance(cadena));  
+        }
+
+        // hablar("hola soy programador");
+
+        let btn = document.getElementById('btn').addEventListener('click', () => {
+           let texto = document.getElementById('cadena').value;
+           hablar(texto);
+        })
+
+    </script>
+</body>
+
+
+</html>
